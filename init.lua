@@ -25,6 +25,7 @@ vim.pack.add({
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 
 	{ src = "https://github.com/swaits/universal-clipboard.nvim" },
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
 -- options
@@ -161,3 +162,6 @@ vim.keymap.set("n", "<leader>d", "<Cmd>Telescope diagnostics<CR>")
 
 -- clipboard
 require("universal-clipboard").setup()
+
+-- indent lines
+require("ibl").setup()
