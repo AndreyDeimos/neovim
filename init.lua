@@ -165,7 +165,6 @@ vim.keymap.set("n", "<leader>d", "<Cmd>Telescope diagnostics<CR>")
 -- clipboard
 require("universal-clipboard").setup()
 
-<<<<<<< HEAD
 -- cpp docs
 -- default
 require("cppman").setup({
@@ -179,7 +178,5 @@ require("cppman").setup({
 		style = "minimal",
 	},
 })
-=======
 -- indent lines
 require("ibl").setup()
->>>>>>> origin/main
