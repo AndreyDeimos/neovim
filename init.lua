@@ -25,6 +25,8 @@ vim.pack.add({
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 
 	{ src = "https://github.com/swaits/universal-clipboard.nvim" },
+
+	{ src = "https://github.com/v1nh1shungry/cppman.nvim" },
 })
 
 -- options
@@ -161,3 +163,17 @@ vim.keymap.set("n", "<leader>d", "<Cmd>Telescope diagnostics<CR>")
 
 -- clipboard
 require("universal-clipboard").setup()
+
+-- cpp docs
+-- default
+require("cppman").setup({
+	-- * builtin: `vim.ui.select()`
+	-- * telescope
+	-- * snacks (recommended)
+	picker = "telescope",
+	-- used in `vim.api.nvim_open_win`
+	win = {
+		split = "below",
+		style = "minimal",
+	},
+})
