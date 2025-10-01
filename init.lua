@@ -5,7 +5,6 @@ vim.pack.add({
 
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 
-	{ src = "https://github.com/romgrk/barbar.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/catppuccin/nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
@@ -28,8 +27,8 @@ vim.pack.add({
 
 	{ src = "https://github.com/v1nh1shungry/cppman.nvim" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-	{ src = "https://github.com/xiyaowong/transparent.nvim" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
 -- options
@@ -55,6 +54,7 @@ vim.keymap.set(
 )
 
 -- colorscheme
+require("catppuccin").setup({ transparent_background = true })
 vim.cmd.colorscheme("catppuccin")
 
 -- file tree
@@ -183,16 +183,8 @@ require("cppman").setup({
 -- indent lines
 require("ibl").setup()
 
--- transparency
-vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, {
-	"NvimTreeNormal",
-	"NvimTreeWinSeparator",
-	"NvimTreeEndOfBuffer",
-	"TabLineFill",
-	"DiagnosticWarn",
-	"DiagnosticVirtualTextWarn",
-	"DiagnosticVirtualTextError",
-})
+-- bufferline
+require("bufferline").setup({})
 
 -- status line
 require("lualine").setup()
