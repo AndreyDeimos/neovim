@@ -29,6 +29,7 @@ vim.pack.add({
 	{ src = "https://github.com/v1nh1shungry/cppman.nvim" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/xiyaowong/transparent.nvim" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 -- options
@@ -181,3 +182,17 @@ require("cppman").setup({
 })
 -- indent lines
 require("ibl").setup()
+
+-- transparency
+vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, {
+	"NvimTreeNormal",
+	"NvimTreeWinSeparator",
+	"NvimTreeEndOfBuffer",
+	"TabLineFill",
+	"DiagnosticWarn",
+	"DiagnosticVirtualTextWarn",
+	"DiagnosticVirtualTextError",
+})
+
+-- status line
+require("lualine").setup()
