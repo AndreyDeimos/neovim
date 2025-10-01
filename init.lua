@@ -28,6 +28,7 @@ vim.pack.add({
 
 	{ src = "https://github.com/v1nh1shungry/cppman.nvim" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+	{ src = "https://github.com/xiyaowong/transparent.nvim" },
 })
 
 -- options
