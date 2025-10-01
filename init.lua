@@ -1,5 +1,6 @@
 -- plugins
 vim.pack.add({
+	{ src = "https://github.com/folke/snacks.nvim" },
 	-- why so many plugins need ts
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 
@@ -31,6 +32,28 @@ vim.pack.add({
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
+-- colorscheme
+require("catppuccin").setup({
+	transparent_background = true,
+	-- integrations = {
+	-- 	telescope = {
+	-- 		enabled = true,
+	-- 	},
+	-- },
+})
+vim.cmd.colorscheme("catppuccin")
+
+require("snacks").setup(
+	---@type snacks.Config
+	{
+		quickfile = { enabled = true },
+		notifier = { enabled = true },
+	}
+)
+vim.keymap.set("n", "<leader>lg", function()
+	Snacks.lazygit()
+end)
+
 -- options
 vim.cmd("filetype plugin indent on")
 vim.wo.relativenumber = true
@@ -52,10 +75,6 @@ vim.keymap.set(
 	"<Cmd> lua vim.lsp.buf.code_action({apply = true})<CR>",
 	{ noremap = true, silent = true }
 )
-
--- colorscheme
-require("catppuccin").setup({ transparent_background = true })
-vim.cmd.colorscheme("catppuccin")
 
 -- file tree
 vim.g.loaded_netrw = 1
