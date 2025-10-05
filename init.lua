@@ -35,11 +35,14 @@ vim.pack.add({
 -- colorscheme
 require("catppuccin").setup({
 	transparent_background = true,
-	-- integrations = {
-	-- 	telescope = {
-	-- 		enabled = true,
-	-- 	},
-	-- },
+	integrations = {
+		telescope = {
+			enabled = true,
+		},
+		snacks = {
+			enabled = true,
+		},
+	},
 })
 vim.cmd.colorscheme("catppuccin")
 
@@ -98,8 +101,8 @@ require("nvim-tree").setup({
 vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeFocus<CR>")
 
 -- bar
-vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>")
-vim.keymap.set("n", "<leader>c", "<Cmd>BufferClose<CR>")
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>c", "<Cmd>BufferLinePickClose <CR>")
 
 -- mason
 require("mason").setup()
